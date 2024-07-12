@@ -1,0 +1,4 @@
+First Name: Barack | Last Name: John | Student ID: 23 | Score: 7 | Grade: B
+First Name: Tom | Last Name: Jerry | Student ID: 10 | Score: 7 | Grade: B
+First Name: john | Last Name: mark | Student ID: 13 | Score: 6 | Grade: C
+First Name: george | Last Name: ben | Student ID: 43 | Score: 8 | Grade: A
