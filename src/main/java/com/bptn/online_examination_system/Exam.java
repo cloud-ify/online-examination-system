@@ -33,34 +33,30 @@ public class Exam {
 		return questionAndAnswer;									//returns the map with question and answer
 
 	}
-	
 
-//	public static int shuffleQuestion() {
-//		
-//	}
-	
+
 	//creates a method that displays question and check inputed answers from student for correctness. 
 	public static int displayExam() {
-	
+
 		// Read questions and answers from a file and store them in a map.
 		Map<String, String> questionAndAnswer = readQuestion("questions.txt");
 		Set<String> questions = questionAndAnswer.keySet();		 	// Get the set of questions from the map keys.
 		List<String> questionList = new ArrayList<>(questions);		// Convert the set of questions into a list for shuffling.
 		Collections.shuffle(questionList);							// Shuffle the list of questions to randomize the order.					
 		System.out.println("\nPlease answer the following questions.\nYou will be presented with ten(10) questions. Enter one of options A, B, C, or D for each question.\n");
-		
+
 		Scanner scanAnswer = new Scanner(System.in);				// Create a Scanner object to read the student's answers from the console.
-		
+
 		// Initialize the counter for numbering questions and result counter to keep track of correct answers
 		int counter = 1;
 		int score = 0;
-		
+
 		// Iterate through the first 10 questions in the shuffled list.
 		for(String question : questionList.subList(0,10) ) {
 			System.out.println(counter + ". " + question);					// Print the question number and the question text.
 			System.out.println("Enter options Between A - D");				//prompt the student to enter a response
 			String answer = scanAnswer.nextLine(); 							// reads the student response from the console
-			
+
 			// Ensure the student's answer is valid (between A and D).
 			while(!(answer.equalsIgnoreCase("A")) && !(answer.equalsIgnoreCase("B")) && !(answer.equalsIgnoreCase("C")) && !(answer.equalsIgnoreCase("D"))) {
 				System.out.println("Invalid Response, enter a valid input between A-D");
@@ -74,23 +70,9 @@ public class Exam {
 			}
 			counter++;														//increments counter
 		}
-//		scanAnswer.close();													//closes scanner 
+
 		return score;														//return result
-		
-		
+
+
 	}	
-		//		questionList.subList(0,10).forEach(question -> {System.out.println(counter + ". " + question);
-		//										System.out.println("Enter options Between A - D");
-		//										String answer = scanAnswer.nextLine().toUpperCase();
-		//										counter++;
-		//										
-		//										});
-
-
-		//System.out.println(questionList);
-	
-
-
-
-
 }
